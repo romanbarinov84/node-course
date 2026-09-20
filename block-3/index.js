@@ -1,24 +1,21 @@
-const path = require('path');
 const fs = require('fs');
 
 
-const fileToPath = path.join('./test','data','text.txt');
-const fileResolve = path.resolve('text.txt');
-const readFile = fs.readFileSync(fileToPath,'utf-8');
-const firstNameFile = path.basename(fileToPath);
-const nameFolder = path.dirname(fileToPath);
-const fileItem = path.extname(fileToPath);
 
-// console.log(readFile);
- console.log(fileToPath);
- console.log(fileResolve);
- 
-// console.log(firstNameFile);
-// console.log(nameFolder);
-// console.log(fileItem);
+console.log('start');
+
+
+ fs.readFile('./test/data/text.txt','utf-8',(err,data)=>{
+    if(err){
+        console.log(err);
+        
+    }
+    console.log('file:', data);
+    
+});
 
 
 
 
-
+console.log('end');
 
