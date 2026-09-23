@@ -2,29 +2,25 @@
 const fs = require('fs');
 const path = require('path');
 
-const pathToFile = path.join('./test','data','text.txt');
 
+function workFile(){
+    const pathToFile = path.join(__dirname,'test','data','text.txt');
 
-function appendReadFile(){
-    fs.appendFile(pathToFile,', \n I love Node.js and learning it now',(err) => {
+    fs.writeFile(pathToFile,'I love Node.js',(err) => {
         if(err){
-            console.log('Cannot append to file');
+            console.log(`Cannot write this file : ${pathToFile}`);
             return
-        }else{
-            fs.readFile(pathToFile,'utf-8',(err,data) => {
-                if(err){
-                    console.log('Cannot read the file');
-                    return
-                }else{
-                    console.log('file was read');
-                    
-                }
-                console.log(data);
-                
-            })
         }
+     fs.readFile(pathToFile,'utf-8',(err,data) => {
+        if(err){
+            console.log(`Cannot read this file : ${pathToFile}`);
+            return
+        }
+        console.log('File was reading');
+        console.log(data);
+        
+     })
     })
 }
 
-appendReadFile();
-
+workFile()
