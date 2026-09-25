@@ -2,11 +2,27 @@
 const os = require('os');
 
 
-const uptime = Math.floor( os.uptime());
-const hours = Math.floor(uptime / 3600)
-const minutes = Math.floor((uptime % 3600)/ 60);
-const second = Math.floor(minutes % 60)
 
-console.log(uptime);
-console.log(`Hours:${hours}: minutes:${minutes} : sec:${second}`);
 
+function getOSInfo() {
+ 
+    console.log("===== SYSTEM INFO =====");
+    console.log("===== OS: =====");
+    console.log("Platform : ", os.platform());
+    console.log("Type : ", os.type());
+    console.log("Release : ",os.release());
+    console.log("Architecture : ",os.arch());
+    
+    
+    console.log("===== user INFO =====");
+    console.log("UserName : ", os.userInfo().username);
+    console.log("Home Directory :" , os.userInfo().homedir);
+    
+    
+
+ 
+  
+  
+}
+
+getOSInfo()
