@@ -1,0 +1,8 @@
+Задача	Method	URL
+Получить все товары	get / products
+Получить товар 25	get	/ products/ id:25
+Создать товар	post / products
+Изменить цену товара 25	 patch /products/ id:25 ? price
+Удалить товар 25	delete / products / id:25
+Найти товары iphone	 get /products?search=iphone
+Вторая страница, по 20 товаров	get / products ? page:2 

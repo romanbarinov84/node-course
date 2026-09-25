@@ -1,10 +1,12 @@
 
 const os = require('os');
 
-const cpus = os.cpus();
 
-cpus.forEach((item,index) => {
+const uptime = Math.floor( os.uptime());
+const hours = Math.floor(uptime / 3600)
+const minutes = Math.floor((uptime % 3600)/ 60);
+const second = Math.floor(minutes % 60)
 
-    console.log(`CPU${index}: ${item.model} "|" Speed:  ${item.speed}`);
-    
-})
+console.log(uptime);
+console.log(`Hours:${hours}: minutes:${minutes} : sec:${second}`);
+
